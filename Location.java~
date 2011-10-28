@@ -1,0 +1,43 @@
+import javax.swing.*;
+import java.awt.*;
+import java.util.*;
+
+
+
+public class Location
+{
+
+public Location(int y, int x)
+{
+  xcoor=x;
+  ycoor=y;
+  
+}
+
+public int getXval()
+{
+  return xcoor;
+  
+}
+
+public int getYval()
+{
+  return ycoor;
+}
+
+public boolean isEqual(Location compare)
+{
+ if(xcoor==compare.getXval()&&ycoor==compare.getYval())
+   return true;
+   else
+   return false;
+}
+
+public void moveDown()
+{
+  ycoor++;
+}
+  public int xcoor;
+  public int ycoor;
+  
+}

@@ -1,0 +1,39 @@
+import javax.swing.*;
+import java.awt.*;
+import java.util.*;
+
+
+
+public class TetrisBoard
+{
+  public Piece current;
+  private ArrayList<Piece> placed;
+  
+  public TetrisBoard(Piece first)
+  {
+    current=first;
+    placed=new ArrayList<Piece>();
+  }
+  
+  public void newPiece(Piece np)
+  {
+    placed.add(current);
+    current=np;
+  }
+  
+  public ArrayList<Piece> getItems()
+  {
+   return placed; 
+  }
+  
+  public void move()
+  {
+    current.moveDown();
+  }
+  
+  public ArrayList<Piece> getAll()
+  {
+   placed.add(current);
+   return placed;
+  }
+}

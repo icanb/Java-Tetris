@@ -1,0 +1,57 @@
+import javax.swing.*;
+import java.awt.*;
+import java.util.*;
+
+
+
+public class Piece
+{
+private ArrayList<Location> body;
+
+
+
+public void move()
+{
+  for(int b=0; b<body.size(); b++)
+  {
+    body.get(b).moveDown();
+  }
+}
+
+public boolean movable(ArrayList<Piece> placedpieces, ArrayList<Location> body2)
+{
+  for(int b=0; b<body2.size();b++)
+  {
+    if(body2.get(b).getYval()+1>19)
+      return false;
+    
+    for(int i=0;i<placedpieces.size();i++)
+    {
+      
+      
+      for(int c=0; c<placedpieces.get(i).getBody().size(); c++)
+      { if(!body2.get(b).isEqual(placedpieces.get(i).getBody().get(c)))
+        return false;
+      }
+      
+      
+    }
+  }
+  
+  return true;
+}
+
+public ArrayList<Location> getBody()
+{
+ return body; 
+}
+
+public void moveDown()
+{
+  for(int i=0;i<body.size();i++)
+  {
+   body.get(i).moveDown(); 
+  }
+}
+
+}

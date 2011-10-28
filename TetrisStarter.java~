@@ -1,0 +1,19 @@
+import java.awt.event.ActionEvent;
+import java.awt.*;
+import javax.swing.*;
+import java.util.Random;
+
+
+public class TetrisStarter
+{
+  public static void main(String[] args)
+  {
+    //creates a board with the size that the user enters
+   
+    FrameCreator frame=new FrameCreator();
+  }
+}
+  
+ 
+
+

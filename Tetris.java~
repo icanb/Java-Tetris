@@ -1,0 +1,64 @@
+import javax.swing.*;
+import java.awt.*;
+import java.util.*;
+import java.util.Random;
+
+
+public class Tetris
+{
+Random randomizer=new Random();
+TetrisBoard newgame;
+
+public Tetris()
+{//creates a board that is 2 cell bigger than the actual one, so that it can be manipulated without any problem.
+  
+    Piece first=new Piece1();
+  
+    switch (randomizer.nextInt(5)) {
+            case 0:  first=new Piece1(); break;
+            case 1:  first=new Piece2(); break;
+            case 2:  first=new Piece3(); break;
+            case 3:  first=new Piece4(); break;
+            case 4:  first=new Piece5(); break;
+            
+        }
+  
+   
+
+  newgame= new TetrisBoard(first);
+   System.out.println("new TetrisBoard(first)");
+   
+    
+}
+
+public ArrayList<Piece> getComponents()
+{
+  return newgame.getAll();
+}
+
+
+public void flow()
+{
+   Piece newpiece=new Piece1();
+  if(newgame.current.movable(newgame.getItems(), newgame.current.getBody()))
+  {
+    newgame.move();
+  }
+  else
+  {
+    switch (randomizer.nextInt(5)) {
+            case 1:  newpiece=new Piece1(); break;
+            case 2:  newpiece=new Piece2(); break;
+            case 3:  newpiece=new Piece3(); break;
+            case 4:  newpiece=new Piece4(); break;
+            case 5:  newpiece=new Piece5(); break;
+            
+        }
+    newgame.newPiece(newpiece);
+      
+    
+  }
+  
+}
+
+}

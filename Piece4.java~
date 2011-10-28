@@ -1,0 +1,28 @@
+import javax.swing.*;
+import java.awt.*;
+import java.util.*;
+
+public class Piece4 extends Piece
+{private ArrayList<Location> body;
+  public Piece4()
+  {
+    body = new ArrayList<Location>();
+    
+    body.add(new Location(0,7));
+    body.add(new Location(0,8));
+    body.add(new Location(0,9));
+    
+    
+  }
+  public ArrayList<Location> getBody()
+  {
+    return body; 
+  }
+  public void moveDown()
+{
+  for(int i=0;i<body.size();i++)
+  {
+   body.get(i).moveDown(); 
+  }
+}
+}
